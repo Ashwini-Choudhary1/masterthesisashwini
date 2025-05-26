@@ -1,0 +1,18 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import PromptPage from "./PromptPage";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* The PromptPage will now handle displaying responses directly */}
+        <Route path="/prompt/:model" element={<PromptPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
